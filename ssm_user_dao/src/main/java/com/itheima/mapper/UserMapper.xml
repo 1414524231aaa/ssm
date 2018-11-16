@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.UserMapper">
+
+
+    <!--添加用户信息-->
+    <insert id="saveUser" parameterType="User"  >
+        insert into USERS(username,password,telephone,state)
+        VALUES(#{username},#{password},#{telephone},#{state})
+    </insert>
+
+    <!--根据id查询用户信-->
+    <select id="findAll" parameterType="java.util.Map" resultType="User">
+        select * from users where USERNAME=#{USERNAME} and password=#{password}
+    </select>
+
+</mapper>
